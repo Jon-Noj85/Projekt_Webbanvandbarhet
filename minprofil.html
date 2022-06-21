@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min profil | Uppsala färdtjänst</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <!--Import av ikoner från Font Awesome -->
+    <script src="https://kit.fontawesome.com/bd04e42f52.js" crossorigin="anonymous"></script>
+
+    <!--Import av valda typsnitt från Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--Webbplatsens header-->
+    <header class="header_flexcontainer">
+        <h1 class="pagetitleHidden">Min profilsida</h1>
+        <a class="hidden" href="#maincontent">gå till huvudinnehåll</a>
+        <a href="index.html" class="logga">
+            <img src="Images/logga.svg" alt="Uppsala färdtjänst logga">
+        </a>
+        <!--<a href="minaresor.html" class="minaresorMob">Mina resor<i class="fa-solid fa-car"></i></a>-->
+        <!--Menylänkar för desktop-->
+        <nav class="desktopNav" aria-label="Main">
+            <a href="minprofil.html" class="navlink" id="activeDesktop" title="Se din profil">Min profil: Sonia<i class="fa-solid fa-user"></i></a>
+            <a href="boka.html" class="navlink" title="Boka en ny resa">Boka resa<i class="fa-solid fa-car"></i></a>
+            <a href="omfardtjanst.html" class="navlink" title="Information Uppsala Färdtjänst">Om färdtjänst<i class="fa-solid fa-circle-info"></i></a>
+            <a href="login.html" class="navlink" title="Klicka här för att logga ut">Logga ut<i class="fa-solid fa-right-from-bracket"></i></a>
+        </nav>
+        <!--Ikon för att öppna och stänga hamburgarmeny-->
+        <div class="mobilNav">
+            <label for="meny" class="menulabel">Meny</label>
+            <button class="hamburger" id="meny">
+            <span class="bar"></span>
+        </button>
+        </div>
+        <!--Länkar i hamburgarmeny-->
+        <nav class="menulinks" aria-label="Main">
+            <label for="meny" class="closelabel">Stäng</label>
+            <a href="minprofil.html" id="activeHamburger">Min profil: Sonia<i class="fa-solid fa-user"></i></a>
+            <a href="boka.html">Boka resa<i class="fa-solid fa-car"></i></a>
+            <a href="omfardtjanst.html">Om färdtjänst<i class="fa-solid fa-circle-info"></i></a>
+            <a href="login.html">Logga ut<i class="fa-solid fa-right-from-bracket"></i></a>
+        </nav>
+    </header>
+    <div class="pagewrapper" id="profileMain">
+        <main>
+            <section>
+                <!--Information om användarens färdtjänst-->
+                <h2>Min profil</h2>
+                <article>
+                    <table>
+                        <tr>
+                            <td>Namn:</td>
+                            <td>Sonia Larsen</td>
+                        </tr>
+                        <tr>
+                            <td>Kortnummer:</td>
+                            <td>20220803-555</td>
+                        </tr>
+                        <tr>
+                            <td>Färdtjänst&shy;tillstånd giltigt t.o.m.:</td>
+                            <td>2022-08-03</td>
+                        </tr>
+                        <tr>
+                            <td>Åter&shy;kommande resor:</td>
+                            <td>2 enkel&shy;resor&shy;/dag</td>
+                        </tr>
+                    </table>
+                </article>
+            </section>
+            <section>
+                <article>
+                    <!--Sektion för listning av olika resor-->
+                    <h3 id="maincontent" tabindex="-1">Mina resor</h3>
+                    <ul id="expander" aria-label="Mina kommande och föregående resor">
+                        <li>
+                            <!--Utfällbar knapp för kommande resor-->
+                            <button class="expanderBtn" id="btn1" aria-expanded="false" aria-controls="sect1">Mina kommande resor
+                            <i class="fas fa-chevron-down arrow"></i></button>
+                            <section class="textExpand" id="sect1" aria-live="polite">
+                                <!--Resa 1-->
+                                <article class="tripContainer" id="trip1">
+                                    <h4>3 mars 2022</h4>
+                                    <table>
+                                        <tr>
+                                            <td>Till:</td>
+                                            <td>Frödingsgatan 16</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Från:</td>
+                                            <td>Stationsvägen 45</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tid:</td>
+                                            <td>13:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Retur:</td>
+                                            <td>Nej</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pris:</td>
+                                            <td>80 kr</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Zon:</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Val:</td>
+                                            <td>Egen bil</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>Medresenär</td>
+                                        </tr>
+                                    </table>
+                                    <a href="andraresa1.html" class="changeButton" id="changetrip1" title="Ändra din resa">Ändra resa<i class="fa-solid fa-arrow-rotate-left"></i></a>
+                                    <button type="button" class="removeButton" id="canceltrip1" title="Avboka din resa">Avboka resa<i class="fa-solid fa-ban"></i></button>
+                                </article>
+                                <!--Resa 2-->
+                                <article class="tripContainer" id="trip2">
+                                    <h4>15 mars 2022</h4>
+                                    <table>
+                                        <tr>
+                                            <td>Till:</td>
+                                            <td>Marmorvägen 9</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Från:</td>
+                                            <td>Trädgårdsgatan 15</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tid:</td>
+                                            <td>13:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Retur:</td>
+                                            <td>Ja</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Från:</td>
+                                            <td>Marmorvägen 9</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Till:</td>
+                                            <td>Trädgårdsgatan 15</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tid:</td>
+                                            <td>18:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pris:</td>
+                                            <td>160 kr</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Zon:</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Val:</td>
+                                            <td>Egen bil</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>Medresenär</td>
+                                        </tr>
+                                    </table>
+                                    <a href="andraresa2.html" class="changeButton" id="changetrip2" title="Ändra din resa">Ändra resa<i class="fa-solid fa-arrow-rotate-left"></i></a>
+                                    <button type="button" class="removeButton" id="canceltrip2" title="Avboka din resa">Avboka resa<i class="fa-solid fa-ban"></i></button>
+                                </article>
+                            </section>
+                        </li>
+                        <li>
+                            <!--Utfällbar knapp för återkommande resan-->
+                            <button class="expanderBtn" id="btn2" aria-expanded="false" aria-controls="sect2">Min återkommande resa<i class="fas fa-chevron-down arrow"></i></button>
+                            <article class="textExpand" id="sect2" role="region" aria-live="polite">
+                                <table>
+                                    <tr>
+                                        <td>Till:</td>
+                                        <td>Norrlands&shy;gatan 21</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Från:</td>
+                                        <td>Trädgårds&shy;stigen 4</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tid:</td>
+                                        <td>08:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Retur</td>
+                                        <td>Ja</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tid:</td>
+                                        <td>16:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pris:</td>
+                                        <td>50 kr/dag</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zon:</td>
+                                        <td>1-2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Val:</td>
+                                        <td>Samåkning</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Veckodagar:</td>
+                                        <td>Måndag</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Onsdag</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>Fredag</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gäller f.o.m.:</td>
+                                        <td>03-15</td>
+                                    </tr>
+                                </table>
+                                <a href="andraresa3.html" class="changeButton" id="changetrip3" title="Ändra din resa">Ändra resa<i class="fa-solid fa-arrow-rotate-left"></i></a>
+                                <button type="button" class="removeButton" id="canceltrip3" title="Avboka din resa">Avboka resa<i class="fa-solid fa-ban"></i></button>
+                            </article>
+                        </li>
+                        <li>
+                            <!--Utfällbar knapp för föregående resor-->
+                            <button class="expanderBtn" id="btn3" aria-expanded="false" aria-controls="sect3">Mina föregående resor<i class="fas fa-chevron-down arrow"></i></button>
+                            <section class="textExpand" id="sect3" aria-live="polite">
+                                <!--Resa 1-->
+                                <article class="tripContainer" id="trip4">
+                                    <h4>25 februari 2022</h4>
+                                    <table>
+                                        <tr>
+                                            <td>Till:</td>
+                                            <td>Storgatan 8</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Från:</td>
+                                            <td>Trädgårdsstigen 4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tid:</td>
+                                            <td>16:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Retur</td>
+                                            <td>Nej</td>
+                                        </tr>
+                                    </table>
+                                    <p><strong>Var bilen sen?</strong></p>
+                                    <p onclick="location.href='mailto:kontakt@uppsalafardtjanst.se';" style="cursor: pointer;">Då har du rätt till rese&shy;garanti. Den gäller om bilen var mer än 20 minuter sen. Ring: 018-55 55 55 eller mejla oss på fardtjanst@uppsala.se.</p>
+                                    <p><strong>Glömt något i bilen?</strong></p>
+                                    <p onclick="location.href='mailto:kontakt@uppsalafardtjanst.se';" style="cursor: pointer;">Ring på nummer: 018-55 55 55 eller mejla oss på fardtjanst@uppsala.se.</p>
+                                </article>
+                                <!--Resa 2-->
+                                <article class="tripContainer" id="trip5">
+                                    <h4>8 februari 2022</h4>
+                                    <table>
+                                        <tr>
+                                            <td>Till:</td>
+                                            <td>Storgatan 8</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Från:</td>
+                                            <td>Trädgårdsstigen 4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tid:</td>
+                                            <td>12:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Retur</td>
+                                            <td>Ja</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tid:</td>
+                                            <td>16:00</td>
+                                        </tr>
+                                    </table>
+                                    <p><strong>Var bilen sen?</strong></p>
+                                    <p onclick="location.href='mailto:kontakt@uppsalafardtjanst.se';" style="cursor: pointer;">Då har du rätt till rese&shy;garanti. Den gäller om bilen var mer än 20 minuter sen. Ring: 018-55 55 55 eller mejla oss på fardtjanst@uppsala.se.</p>
+                                    <p><strong>Glömt något i bilen?</strong></p>
+                                    <p onclick="location.href='mailto:kontakt@uppsalafardtjanst.se';" style="cursor: pointer;">Ring på nummer: 018-55 55 55 eller mejla oss på fardtjanst@uppsala.se.</p>
+                                </article>
+                                <!--Resa 3-->
+                                <article class="tripContainer" id="trip6">
+                                    <h4>14 januari 2022</h4>
+                                    <table>
+                                        <tr>
+                                            <td>Till:</td>
+                                            <td>Storgatan 8</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Från:</td>
+                                            <td>Trädgårdsstigen 4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tid:</td>
+                                            <td>12:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Retur</td>
+                                            <td>Ja</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tid:</td>
+                                            <td>16:00</td>
+                                        </tr>
+                                    </table>
+                                    <p><strong>Var bilen sen?</strong></p>
+                                    <p onclick="location.href='mailto:kontakt@uppsalafardtjanst.se';" style="cursor: pointer;">Då har du rätt till rese&shy;garanti. Den gäller om bilen var mer än 20 minuter sen. Ring: 018-55 55 55 eller mejla oss på fardtjanst@uppsala.se.</p>
+                                    <p><strong>Glömt något i bilen?</strong></p>
+                                    <p onclick="location.href='mailto:kontakt@uppsalafardtjanst.se';" style="cursor: pointer;">Ring på nummer: 018-55 55 55 eller mejla oss på fardtjanst@uppsala.se.</p>
+                                </article>
+                            </section>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+            <section>
+                <article>
+                    <!--Här kan man göra förinställda val av anpassningar för resan-->
+                    <h3>Mina förinställda val</h3>
+                    <p><strong>Här kan du välja hur du vill resa.</strong></p>
+                    <form id="bookform">
+                        <fieldset>
+                            <div id="tripChoicesDiv">
+                                <div class="tripChoices">
+                                    <label for="owncar">Egen bil</label>
+                                    <input type="radio" id="owncar" name="carchoice" value="egenbil" checked>
+                                </div>
+                                <div class="tripChoices">
+                                    <label for="carshare">Samåkning</label>
+                                    <input type="radio" id="carshare" name="carchoice" value="samakning">
+                                </div>
+                                <div class="tripChoices">
+                                    <label for="together">Medresenär</label>
+                                    <input type="checkbox" id="together" name="numberPeople" value="flermed">
+                                </div>
+                                <div class="tripChoices">
+                                    <label for="wheelchair">Rullstolsanpassad bil</label>
+                                    <input type="checkbox" id="wheelchair" name="wheelchair" value="rullstolsanpassning">
+                                </div>
+                                <div class="tripChoices">
+                                    <label for="assistent">Ledsagare</label>
+                                    <input type="checkbox" id="assistent" name="assistent" value="ledsagare">
+                                </div>
+                                <div class="tripChoices">
+                                    <label for="dog">Plats för ledarhund</label>
+                                    <input type="checkbox" id="dog" name="dog" value="ledarhund">
+                                </div>
+                            </div>
+                        </fieldset>
+                        <button type="button" id="changetrip" title="Spara dina ändringar">Spara ändringar<i class="fa-solid fa-calendar-plus"></i></button>
+                    </form>
+                </article>
+            </section>
+        </main>
+    </div>
+    <!--Webbplatsens footer-->
+    <footer>
+        <div class="footerWrapper">
+            <div class="leftColumnFooter">
+                <h2>Kontakt</h2>
+                <ul class="contactnav">
+                    <li>Telefon: <span class="underLine">018-550000</span></li>
+                    <li>E-post: <a href="mailto:bokning@uppsalafardtjanst.se">bokning@uppsalafardtjanst.se</a></li>
+                    <li>Besöks&shy;adress: Storgatan 12B</li>
+                    <li>Öppet vardagar kl. 8-16</li>
+                </ul>
+            </div>
+            <div class="rightColumnFooter">
+                <h2>Om webbplatsen</h2>
+                <ul class="aboutnav">
+                    <li><a href="omfardtjanst.html">Om Uppsala Färdtjänst</a></li>
+                    <li><a href="tillganglighetsredogorelse.html">Tillgänglighetsredogörelse</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>

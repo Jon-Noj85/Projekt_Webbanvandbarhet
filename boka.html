@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boka resa | Uppsala färdtjänst</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <!--Import av ikoner från Font Awesome -->
+    <script src="https://kit.fontawesome.com/bd04e42f52.js" crossorigin="anonymous"></script>
+
+    <!--Import av valda typsnitt från Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--Webbplatsens header-->
+    <header class="header_flexcontainer">
+        <h1 class="pagetitleHidden">Boka din resa</h1>
+        <a class="hidden" href="#maincontent">gå till huvudinnehåll</a>
+        <a href="index.html" class="logga">
+            <img src="Images/logga.svg" alt="Uppsala färdtjänst logga">
+        </a>
+        <!--<a href="minaresor.html" class="minaresorMob">Mina resor<i class="fa-solid fa-car"></i></a>-->
+        <!--Menylänkar för desktop-->
+        <nav class="desktopNav" aria-label="Main">
+            <a href="minprofil.html" class="navlink" title="Se din profil">Min profil: Sonia<i class="fa-solid fa-user"></i></a>
+            <a href="boka.html" class="navlink" id="activeDesktop" title="Boka en ny resa">Boka resa<i class="fa-solid fa-car"></i></a>
+            <a href="omfardtjanst.html" class="navlink" title="Information Uppsala Färdtjänst">Om färdtjänst<i class="fa-solid fa-circle-info"></i></a>
+            <a href="login.html" class="navlink" title="Klicka här för att logga ut">Logga ut<i class="fa-solid fa-right-from-bracket"></i></a>
+        </nav>
+        <!--Ikon för att öppna och stänga hamburgarmeny-->
+        <div class="mobilNav">
+            <label for="meny" class="menulabel">Meny</label>
+            <button class="hamburger" id="meny">
+            <span class="bar"></span>
+        </button>
+        </div>
+        <!--Länkar i hamburgarmeny-->
+        <nav class="menulinks" aria-label="Main">
+            <label for="meny" class="closelabel">Stäng</label>
+            <a href="minprofil.html">Min profil: Sonia<i class="fa-solid fa-user"></i></a>
+            <a href="boka.html" id="activeHamburger">Boka resa<i class="fa-solid fa-car"></i></a>
+            <a href="omfardtjanst.html">Om färdtjänst<i class="fa-solid fa-circle-info"></i></a>
+            <a href="login.html">Logga ut<i class="fa-solid fa-right-from-bracket"></i></a>
+        </nav>
+    </header>
+    <main>
+        <!--Här väljer användaren om man vill boka en vanlig eller återkommande resa-->
+        <form id="chooseform">
+            <fieldset>
+                <legend id="maincontent" tabindex="-1">Vilken typ av resa vill du boka?</legend>
+                <div class="triptype">
+                    <label for="simple">Engångsresa</label>
+                    <input type="radio" id="simple" name="choosetriptype" value="vanligresa" checked><br>
+                    <label for="recurring">Åter&shy;kommande resa</label>
+                    <input type="radio" id="recurring" name="choosetriptype" value="aterkommanderesa">
+                </div>
+            </fieldset>
+        </form>
+        <!--Formulär för en återkommande resa-->
+        <form id="recurringform">
+            <fieldset>
+                <legend>Här bokar du en åter&shy;kommande resa</legend>
+                <div class="expander" aria-label="har jag rätt till återkommande resa?">
+                    <button type="button" class="expanderBtn" id="btn2" aria-expanded="false" aria-controls="sect2">Information om min rätt
+                    <i class="fas fa-chevron-down arrow"></i></button>
+                    <article class="textExpand" id="sect2" role="region">
+                        <p>Du har rätt till två enkel&shy;resor per dag för att åka till och från ditt arbete.</p>
+                        <p>Mer informa&shy;tion om ditt färd&shy;tjänst&shy;bevis hittar du under "Min profil".</p>
+                    </article>
+                </div>
+            </fieldset>
+            <!--Adresser för destination och avgång-->
+            <fieldset>
+                <legend>Vart vill du åka?</legend>
+                <div class="destinationDiv">
+                    <label for="destinationRecurring">Till: </label>
+                    <input type="text" id="destinationRecurring" name="destinationRecurring" placeholder="Stationvägen 10">
+                </div>
+                <div class="departureDiv">
+                    <label for="departureRecurring">Från: </label>
+                    <input type="text" id="departureRecurring" name="departureRecurring" placeholder="Hemadress">
+                </div>
+            </fieldset>
+            <fieldset>
+                <!--Avgångstid-->
+                <legend>Vilken tid vill du lämna ditt hem?</legend>
+                <div id="morningTime">
+                    <label for="morningTimeRecurring" id="morningTimeLabel">Tid:</label>
+                    <input type="text" id="morningTimeRecurring" name="morningTimeChoice" placeholder="08:00">
+                </div>
+            </fieldset>
+            <fieldset>
+                <!--Om man vill boka en återkommande returresa-->
+                <legend>Vill du boka returresa?</legend>
+                <div class="choosereturn">
+                    <label for="noreturnRecurring">Nej</label>
+                    <input type="radio" id="noreturnRecurring" name="returntripRecurring" value="ingenretur">
+                    <label for="yesreturnRecurring">Ja</label>
+                    <input type="radio" id="yesreturnRecurring" name="returntripRecurring" value="retur" checked>
+                </div>
+                <!--Tid för eventuell returresa-->
+                <div id="timeDivReturnRecurring">
+                    <label for="returntimeRecurring" id="timereturnRecurringlabel">Tid:</label>
+                    <input type="text" id="returntimeRecurring" name="returntimeRecurring" placeholder="16:00">
+                </div>
+            </fieldset>
+            <fieldset>
+                <!--Val av veckordagar-->
+                <legend>Välj veckodagar för din resa</legend>
+                <div class="weekdays">
+                    <label for="monday">Måndag</label>
+                    <input type="checkbox" id="monday" name="weekday" value="monday">
+                </div>
+                <div class="weekdays">
+                    <label for="tuesday">Tisdag</label>
+                    <input type="checkbox" id="tuesday" name="weekday" value="tuesday">
+                </div>
+                <div class="weekdays">
+                    <label for="wednesday">Onsdag</label>
+                    <input type="checkbox" id="wednesday" name="weekday" value="wednesday">
+                </div>
+                <div class="weekdays">
+                    <label for="thursday">Torsdag</label>
+                    <input type="checkbox" id="thursday" name="weekday" value="thursday">
+                </div>
+                <div class="weekdays">
+                    <label for="friday">Fredag</label>
+                    <input type="checkbox" id="friday" name="weekday" value="friday">
+                </div>
+                <div class="weekdays">
+                    <label for="saturday">Lördag</label>
+                    <input type="checkbox" id="saturday" name="weekday" value="saturday">
+                </div>
+                <div class="weekdays">
+                    <label for="sunday">Söndag</label>
+                    <input type="checkbox" id="sunday" name="weekday" value="sunday">
+                </div>
+            </fieldset>
+            <!--Här kan användaren välja vilka speciella anpassningar hen behöver, om det är någon som åker med etc-->
+            <fieldset>
+                <legend>Välj anpassningar för din resa</legend>
+                <div class="requirements">
+                    <label for="myPresetsRecurring">Mina val</label>
+                    <input type="radio" id="myPresetsRecurring" name="tripchoicesRecurring" value="minaval" checked>
+                    <label for="newPresetsRecurring">Nya val</label>
+                    <input type="radio" id="newPresetsRecurring" name="tripchoicesRecurring" value="nyaval">
+                    <div class="expander" aria-label="se mina val">
+                        <!--Denna knapp visar vilka val man har förinställt, så man inte behöver göra om det varje gång-->
+                        <button type="button" class="expanderBtn" id="btn3" aria-expanded="false" aria-controls="sect3">Se mina val
+                            <i class="fas fa-chevron-down arrow"></i></button>
+                        <article class="textExpand" id="sect3" role="region">
+                            <p><i class="fa-solid fa-check"></i>Du åker med egen bil.</p>
+                            <p><i class="fa-solid fa-check"></i>Du har ingen led&shy;sagare.</p>
+                            <p><i class="fa-solid fa-check"></i>Du har inga med&shy;resenärer.</p>
+                            <p><i class="fa-solid fa-check"></i>Bilen behöver inga anpass&shy;ningar.</p>
+                            <p>Klicka på "Nya val" för att välja anpassningar för denna resa.</p>
+                            <p>Du kan ändra dina för&shy;inställda val under "Min profil".</p>
+                        </article>
+                    </div>
+                </div>
+                <!--Val av anpassningar-->
+                <div id="tripChoicesDivRecurring">
+                    <div class="tripChoices">
+                        <label for="owncarRecurring">Egen bil</label>
+                        <input type="radio" id="owncarRecurring" name="carchoiceRecurring" value="egenbil" checked>
+                    </div>
+                    <div class="tripChoices">
+                        <label for="carshareRecurring">Samåkning</label>
+                        <input type="radio" id="carshareRecurring" name="carchoiceRecurring" value="samakning">
+                    </div>
+                    <div class="tripChoices">
+                        <label for="togetherRecurring">Medresenär</label>
+                        <input type="checkbox" id="togetherRecurring" name="togetherRecurring" value="flermed">
+                    </div>
+                    <div class="tripChoices">
+                        <label for="wheelchairRecurring">Rullstolsanpassad bil</label>
+                        <input type="checkbox" id="wheelchairRecurring" name="wheelchairRecurring" value="rullstolsanpassning">
+                    </div>
+                    <div class="tripChoices">
+                        <label for="assistentRecurring">Ledsagare</label>
+                        <input type="checkbox" id="assistentRecurring" name="assistentRecurring" value="ledsagare">
+                    </div>
+                    <div class="tripChoices">
+                        <label for="dogRecurring">Plats för ledarhund</label>
+                        <input type="checkbox" id="dogRecurring" name="dogRecurring" value="ledarhund">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <!--Datum för när denna resa ska börja gälla-->
+                <legend>Från vilket datum ska den återkommande resan gälla?</legend>
+                <div id="dateDivRecurring">
+                    <label for="pickdateRecurring">Datum:</label>
+                    <input type="text" id="pickdateRecurring" name="pickdateRecurring" placeholder="03-07">
+                </div>
+            </fieldset>
+            <button type="button" id="booktripRecurring" title="Boka en ny resa">Boka resan<i class="fa-solid fa-calendar-plus"></i></button>
+        </form>
+        <!--Formulär för bokning av vanlig resa-->
+        <form id="bookform">
+            <fieldset>
+                <!--Adresser för destination och avgång-->
+                <legend>Vart vill du åka?</legend>
+                <div class="destinationDiv">
+                    <label for="destination">Till: </label>
+                    <input type="text" id="destination" name="destination" placeholder="Stationvägen 10">
+                </div>
+                <div class="departureDiv">
+                    <label for="departure">Från: </label>
+                    <input type="text" id="departure" name="departure" placeholder="Hemadress">
+                </div>
+            </fieldset>
+            <fieldset>
+                <!--Val av tid när man vill åka-->
+                <legend>När vill du åka?</legend>
+                <div class="noworlater">
+                    <label for="now">Snarast</label>
+                    <input type="radio" id="now" name="choosetime" value="snarast" checked>
+                    <label for="later">Senare</label>
+                    <input type="radio" id="later" name="choosetime" value="senare">
+                </div>
+                <div id="dateDiv">
+                    <label for="pickdate">Datum:</label>
+                    <input type="text" id="pickdate" name="pickdate" placeholder="03-07">
+
+                    <label for="picktime" id="timelabel">Tid:</label>
+                    <input type="text" id="picktime" name="picktime" placeholder="14:00">
+                </div>
+            </fieldset>
+            <fieldset>
+                <!--Val av eventuell returresa-->
+                <legend>Vill du boka returresa?</legend>
+                <div class="choosereturn">
+                    <label for="noreturn">Nej</label>
+                    <input type="radio" id="noreturn" name="returntrip" value="ingenretur" checked>
+                    <label for="return">Ja</label>
+                    <input type="radio" id="return" name="returntrip" value="retur">
+                </div>
+                <!--Tid och datum för returresa-->
+                <div id="dateDivReturn">
+                    <label for="returndate">Datum:</label>
+                    <input type="text" id="returndate" name="returndate" placeholder="03-15">
+                    <label for="returntime" id="timereturnlabel">Tid:</label>
+                    <input type="text" id="returntime" name="returntime" placeholder="16:00">
+                </div>
+            </fieldset>
+            <!--Här kan användaren välja vilka speciella anpassningar hen behöver, om det är någon som åker med etc-->
+            <fieldset>
+                <legend>Välj anpassningar för din resa</legend>
+                <div class="requirements">
+                    <label for="myPresets">Mina val</label>
+                    <input type="radio" id="myPresets" name="tripchoices" value="minaval" checked>
+                    <label for="newPresets">Nya val</label>
+                    <input type="radio" id="newPresets" name="tripchoices" value="nyaval">
+                </div>
+                <div class="expander" aria-label="se mina val">
+                    <!--Denna knapp visar vilka val man har förinställt, så man inte behöver göra om det varje gång-->
+                    <button type="button" class="expanderBtn" id="btn1" aria-expanded="false" aria-controls="sect1">Se mina val
+                        <i class="fas fa-chevron-down arrow"></i></button>
+                    <article class="textExpand" id="sect1" role="region">
+                        <p><i class="fa-solid fa-check"></i>Du åker med egen bil.</p>
+                        <p><i class="fa-solid fa-check"></i>Du har ingen led&shy;sagare.</p>
+                        <p><i class="fa-solid fa-check"></i>Du har inga med&shy;resenärer.</p>
+                        <p><i class="fa-solid fa-check"></i>Bilen behöver inga anpass&shy;ningar.</p>
+                        <p>Klicka på "Nya val" för att välja anpassningar för denna resa.</p>
+                        <p>Du kan ändra dina för&shy;inställda val under "Min profil".</p>
+                    </article>
+                </div>
+                <!--Val av anpassningar för resan-->
+                <div id="tripChoicesDiv">
+                    <div class="tripChoices">
+                        <label for="owncar">Egen bil</label>
+                        <input type="radio" id="owncar" name="carchoice" value="egenbil" checked>
+                    </div>
+                    <div class="tripChoices">
+                        <label for="carshare">Samåkning</label>
+                        <input type="radio" id="carshare" name="carchoice" value="samakning">
+                    </div>
+                    <div class="tripChoices">
+                        <label for="together">Medresenär</label>
+                        <input type="checkbox" id="together" name="numberPeople" value="flermed">
+                    </div>
+                    <div class="tripChoices">
+                        <label for="wheelchair">Rullstolsanpassad bil</label>
+                        <input type="checkbox" id="wheelchair" name="wheelchair" value="rullstolsanpassning">
+                    </div>
+                    <div class="tripChoices">
+                        <label for="assistent">Ledsagare</label>
+                        <input type="checkbox" id="assistent" name="assistent" value="ledsagare">
+                    </div>
+                    <div class="tripChoices">
+                        <label for="dog">Plats för ledarhund</label>
+                        <input type="checkbox" id="dog" name="dog" value="ledarhund">
+                    </div>
+                </div>
+            </fieldset>
+            <button type="button" id="booktrip" title="Boka en ny resa">Boka resan<i class="fa-solid fa-calendar-plus"></i></button>
+        </form>
+    </main>
+    <!--Webbplatsens footer-->
+    <footer>
+        <div class="footerWrapper">
+            <div class="leftColumnFooter">
+                <h2>Kontakt</h2>
+                <ul class="contactnav">
+                    <li>Telefon: <span class="underLine">018-550000</span></li>
+                    <li>E-post: <a href="mailto:bokning@uppsalafardtjanst.se">bokning@uppsalafardtjanst.se</a></li>
+                    <li>Besöks&shy;adress: Storgatan 12B</li>
+                    <li>Öppet vardagar kl. 8-16</li>
+                </ul>
+            </div>
+            <div class="rightColumnFooter">
+                <h2>Om webbplatsen</h2>
+                <ul class="aboutnav">
+                    <li><a href="omfardtjanst.html">Om Uppsala Färdtjänst</a></li>
+                    <li><a href="tillganglighetsredogorelse.html">Tillgänglighetsredogörelse</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>

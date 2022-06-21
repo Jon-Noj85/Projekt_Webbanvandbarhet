@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om färdtjänst | Uppsala färdtjänst</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <!--Import av ikoner från Font Awesome -->
+    <script src="https://kit.fontawesome.com/bd04e42f52.js" crossorigin="anonymous"></script>
+
+    <!--Import av valda typsnitt från Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--Webbplatsens header-->
+    <header class="header_flexcontainer">
+        <h1 class="pagetitleHidden">Om färdtjänst</h1>
+        <a class="hidden" href="#maincontent">gå till huvudinnehåll</a>
+        <a href="index.html" class="logga">
+            <img src="Images/logga.svg" alt="Uppsala färdtjänst logga">
+        </a>
+        <!--<a href="minaresor.html" class="minaresorMob">Mina resor<i class="fa-solid fa-car"></i></a>-->
+        <!--Menylänkar för desktop-->
+        <nav class="desktopNav" aria-label="Main">
+            <a href="minprofil.html" class="navlink" title="Se din profil">Min profil: Sonia<i class="fa-solid fa-user"></i></a>
+            <a href="boka.html" class="navlink" title="Boka en ny resa">Boka resa<i class="fa-solid fa-car"></i></a>
+            <a href="omfardtjanst.html" class="navlink" title="Information Uppsala Färdtjänst" id="activeDesktop">Om färdtjänst<i class="fa-solid fa-circle-info"></i></a>
+            <a href="login.html" class="navlink" title="Klicka här för att logga ut">Logga ut<i class="fa-solid fa-right-from-bracket"></i></a>
+        </nav>
+        <!--Ikon för att öppna och stänga hamburgarmeny-->
+        <div class="mobilNav">
+            <label for="meny" class="menulabel">Meny</label>
+            <button class="hamburger" id="meny">
+            <span class="bar"></span>
+        </button>
+        </div>
+        <!--Länkar i hamburgarmeny-->
+        <nav class="menulinks" aria-label="Main">
+            <label for="meny" class="closelabel">Stäng</label>
+            <a href="minprofil.html">Min profil: Sonia<i class="fa-solid fa-user"></i></a>
+            <a href="boka.html">Boka resa<i class="fa-solid fa-car"></i></a>
+            <a href="omfardtjanst.html" id="activeHamburger">Om färdtjänst<i class="fa-solid fa-circle-info"></i></a>
+            <a href="login.html">Logga ut<i class="fa-solid fa-right-from-bracket"></i></a>
+        </nav>
+    </header>
+    <main class="mainContent" id="maincontent" tabindex="-1">
+        <!--Information om Uppsala färdtjänst-->
+        <article>
+            <h2>Om Uppsala färdtjänst</h2>
+            <p onclick="location.href='tillganglighetsredogorelse.html';" style="cursor: pointer;"><strong>Här kan du läsa om Uppsala Färdtjänst. Vi arbetar också på att göra webbplatsen så tillgänglig för alla som möjligt.</strong></p>
+        </article>
+        <!--Information om vem som kan använda Uppsala färdtjänst-->
+        <article>
+            <h3>Vem kan använda Uppsala Färdtjänst?</h3>
+            <p><strong>Med Uppsala färdtjänst kan du boka färdtjänstresor inom Uppsala kommun.</strong></p>
+            <p>Det är till för dig som har svårt att förflytta dig på andra sätt. Du ska ha haft svårigheten i över tre månaders tid och du måste vara folkbokförd i Uppsala kommun.</p>
+            <p><strong>På resan behöver du bara ha med dig din legitimation.</strong></p>
+        </article>
+        <!--Information om vad det kostar att använda Uppsala färdtjänst-->
+        <article>
+            <h3>Vad kostar det att åka färdtjänst?</h3>
+            <p><strong>Det kostar olika beroende på hur lång resan är och hur du reser.</strong></p>
+            <p>Här är prislista över resor inom Uppsala kommun:</p>
+            <div class="pricesContainer">
+                <table id="prices">
+                    <thead>
+                        <tr>
+                            <th>Antal zoner</th>
+                            <th>Sam&shy;åkning</th>
+                            <th>Egen bil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1 (en) zon</td>
+                            <td>40 kr</td>
+                            <td>80kr</td>
+                        </tr>
+                        <tr>
+                            <td>2 (två) zoner</td>
+                            <td>80 kr</td>
+                            <td>160 kr</td>
+                        </tr>
+                        <tr>
+                            <td>Enkel resa till och från Arlanda</td>
+                            <td>150 kr</td>
+                            <td>300 kr</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+        <!--Information om färdtjänsttillståndet Uppsala färdtjänst-->
+        <article onclick="location.href='minprofil.html';" style="cursor: pointer;">
+            <h3>Förnya ditt färdtjänsttillstånd</h3>
+            <p><strong>Tänk på att förnya ditt färdtjänsttillstånd i god tid. Det kan ta upp till en månad att få det förnyat.</strong></p>
+            <p>Under <a href="minprofil.html">Min profil</a> ser du hur länge ditt färdtjänsttillstånd gäller. Det går också bra att ringa oss på <span class="underLine">018-550000</span> eller mejla <a href="mailto:kontakt@uppsalafardtjanst.se">kontakt@uppsalafardtjanst.se</a>                för frågor gällande ditt färdtjänsttillstånd.</p>
+        </article>
+        <!--Information om återkommande resor-->
+        <article onclick="location.href='minprofil.html';" style="cursor: pointer;">
+            <h3>Återkommande resor</h3>
+            <p><strong>Du måste ha ansökt om att ha rätt till återkommande resor.</strong></p>
+            <p>Du ser under <a href="minprofil.html">Min profil</a> om du har rätt till det. Du har rätt till två enkelresor per dag om du inte har ansökt om särskilda villkor. Totalt kostar dessa resor inte mer än det kostar att åka kollektivtraffik.</p>
+            <p>Återkommande resor gäller för resor som tar dig:</p>
+            <ul>
+                <li>Till och från arbete.</li>
+                <li>Till och från studier som ger rätt till ersättning från Centrala studiestödsnämnden (CSN).</li>
+                <li>Till och från svenska för invandrare (SFI).</li>
+                <li>Till och från daglig verksamhet (så kallade omsorgsresor).</li>
+            </ul>
+            <p>Du får ett antal enkelresor beroende på ditt behov.</p>
+            <h4>Resor som inte räknas</h4>
+            <p>Resor som <strong>inte</strong> kan räknas som återkommande resa är:</p>
+            <ul>
+                <li>Resor under arbetstid.</li>
+                <li>Till studier som inte ger rätt till ersättning från Centrala studiestödsnämnden (CSN).</li>
+                <li>Då någon annan betalar för resan, till exempel skolskjuts eller sjukresor.</li>
+            </ul>
+            <p>Beslut om återkommande resor går att överklaga på telefon <span class="underLine">018-550000</span> eller på <a href="mailto:kontakt@uppsalafardtjanst.se">kontakt@uppsalafardtjanst.se</a>.</p>
+        </article>
+    </main>
+    <!--Webbplatsens footer-->
+    <footer>
+        <div class="footerWrapper">
+            <div class="leftColumnFooter">
+                <h2>Kontakt</h2>
+                <ul class="contactnav">
+                    <li>Telefon: <span class="underLine">018-550000</span></li>
+                    <li>E-post: <a href="mailto:bokning@uppsalafardtjanst.se">bokning@uppsalafardtjanst.se</a></li>
+                    <li>Besöks&shy;adress: Storgatan 12B</li>
+                    <li>Öppet vardagar kl. 8-16</li>
+                </ul>
+            </div>
+            <div class="rightColumnFooter">
+                <h2>Om webbplatsen</h2>
+                <ul class="aboutnav">
+                    <li><a href="omfardtjanst.html">Om Uppsala Färdtjänst</a></li>
+                    <li><a href="tillganglighetsredogorelse.html">Tillgänglighetsredogörelse</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>

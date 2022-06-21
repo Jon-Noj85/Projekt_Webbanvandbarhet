@@ -1,0 +1,1280 @@
+    @import url(normalize.css);
+    /* Import av normalisering av CSS */
+    
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    /* Body-elementets grundegenskaper */
+    
+    body {
+        background-color: #202e45;
+        color: #fff;
+        line-height: 2.1rem;
+        width: 100vw;
+        height: 100vh;
+        font-size: 62.5%;
+        overflow-x: hidden;
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+    /* Main-elementets margin upptill och nedtill */
+    
+    main {
+        margin: 5rem 0 0;
+    }
+    /* Störst rubrik  */
+    
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+        font-family: 'Lato', sans-serif;
+    }
+    /* Näst störst rubrik  */
+    
+    h2 {
+        font-size: 1.7rem;
+        padding: 1rem 0 0;
+        text-align: center;
+        font-family: 'Lato', sans-serif;
+    }
+    /* När h2 är överst på sidan  */
+    
+    .firstTitle {
+        padding-top: 20rem;
+    }
+    /* main-elementet på vissa sidor såsom min profil */
+    
+    .mainContent {
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+    /* aside-elementet på startsidan  */
+    
+    aside {
+        margin-bottom: 2rem;
+    }
+    /* Rubriker på de sidor som har maincontent */
+    
+    .mainContent h2 {
+        margin-top: 7rem;
+        margin-bottom: 0.7rem;
+    }
+    
+    .mainContent h3 {
+        text-align: center;
+    }
+    
+    .mainContent h4 {
+        text-align: left;
+        margin: 1.5rem 0 0 0;
+    }
+    /* Underrubrik */
+    
+    h3 {
+        font-size: 1.5rem;
+        padding: 1rem 0 0.3rem;
+        margin: 0.5rem 0 0;
+        font-family: 'Lato', sans-serif;
+    }
+    /* Minsta rubriken */
+    
+    h4 {
+        font-size: 1.5rem;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    
+    p {
+        font-size: 1.4rem;
+        padding: 0.3rem 0;
+    }
+    /* Citet-elementets grundegenskaper */
+    
+    q {
+        font-size: 1.4rem;
+        padding: 0.3rem 0;
+        font-weight: 300;
+        font-style: italic;
+    }
+    /* List-elementet */
+    
+    ul {
+        padding: 0.3rem 2rem 1rem;
+        margin: 0;
+    }
+    
+    ul li {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    strong {
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+    
+    article {
+        padding: 0.5rem 1rem;
+    }
+    /* Skapa länk som gör att man kan hoppa över huvudinnehållet. Kod delvis från: CSS-TRICKS, "How to Create a “Skip to Content Link", https://css-tricks.com/how-to-create-a-skip-to-content-link/ Publicerad 2020-03-17 Hämtad 2022-03-01*/
+    
+    .hidden {
+        padding: 1rem;
+        position: absolute;
+        background: #120e46;
+        left: 0;
+        height: 30px;
+        transform: translateY(-150%);
+        transition: transform 0.3s;
+    }
+    
+    .hidden:focus {
+        transform: translateY(0%);
+    }
+    
+    .hidden {
+        font-size: 1.6rem;
+        color: #fff;
+        text-decoration: none;
+    }
+    /* visuellt dold sidtitel som läses upp av skärmläsare. Kod från: Web Developer Network, "Page Title - H1 - Best Practices", https://wdn.unl.edu/page-title-h1-best-practices, Hämtad 2022-03-05 */
+    
+    .pagetitleHidden {
+        font-size: 0;
+        width: 1px;
+        height: 1px;
+        display: inline-block;
+        overflow: hidden;
+        position: absolute!important;
+        border: 0!important;
+        padding: 0!important;
+        margin: 0!important;
+        clip: rect(1px, 1px, 1px, 1px);
+    }
+    /* header-elementets egenskaper */
+    
+    header {
+        background-color: #120e46;
+        width: 100vw;
+        height: 63px;
+        color: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+    }
+    /* Logotypens egenskaper */
+    
+    .logga {
+        padding: 0;
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: auto;
+        z-index: 99;
+        width: 120px;
+        height: 60px;
+    }
+    /* Meny-etiketten "Meny" bredvid hamburgarikonen */
+    
+    .menulabel {
+        font-size: 1.4rem;
+        font-family: 'Lato', sans-serif;
+        display: inline-block;
+        position: absolute;
+        right: 3rem;
+        top: 0.2rem;
+        cursor: pointer;
+    }
+    /* Stäng-etiketten "Stäng" bredvid hamburgarikonen */
+    
+    .closelabel {
+        font-size: 1.4rem;
+        font-family: 'Lato', sans-serif;
+        display: inline-block;
+        position: absolute;
+        right: 4.2rem;
+        top: 0.8rem;
+        cursor: pointer;
+    }
+    /* Hamburgarikonen och etiketts behållare. Kod för en hamburgarmeny med HTML, CSS och JS från: Tyler Potts, "Build a Slide out Hamburger Menu with HTML, CSS & JavaScript", https://www.youtube.com/watch?v=OFKBep95lb4&list=PLkh5fbQgkUKPmoO3YGOgikJpP4rqm5wQy&index=3&t=879s, Publicerad 2021-01-15 Hämtad 2022-03-03 */
+    
+    .mobilNav {
+        position: absolute;
+        right: 1.8rem;
+        top: 0.7rem;
+    }
+    /* Hamburgarikonen */
+    
+    .hamburger {
+        background-color: #202e45;
+        position: relative;
+        display: block;
+        width: 35px;
+        cursor: pointer;
+        appearance: none;
+        background: none;
+        outline: none;
+        border: none;
+        z-index: 99;
+    }
+    
+    .hamburger:hover {
+        background-color: #120e46;
+        opacity: 1;
+    }
+    
+    .hamburger .bar,
+    .hamburger:after,
+    .hamburger:before {
+        background-color: #202e45;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 5px;
+        background-color: #fff;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+    
+    .hamburger.is-active:before {
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+    
+    .hamburger.is-active:after {
+        transform: rotate(45deg) translate(-9px, -6px);
+    }
+    
+    .hamburger.is-active .bar {
+        opacity: 0;
+    }
+    
+    #activeHamburger {
+        background-color: #fff;
+        color: #202e45;
+        text-decoration: underline;
+    }
+    /* Menyn som kommer fram vid klick på hamburgarikonen */
+    
+    .menulinks {
+        position: fixed;
+        top: 0;
+        left: 100%;
+        display: block;
+        width: 100%;
+        min-height: 100vh;
+        z-index: 98;
+        background-color: #120e46;
+        padding-top: 5rem;
+        transition: 0.4s;
+    }
+    
+    .menulinks.is-active {
+        left: 0;
+    }
+    /* Länkarna i hamburgarenyn vid klick på hamburgarikonen */
+    
+    .menulinks a {
+        font-size: 1.4rem;
+        font-family: 'Lato', sans-serif;
+        color: #fff;
+        display: block;
+        margin: 0 auto;
+        width: 80vw;
+        text-align: center;
+        margin-bottom: 0.5rem;
+        padding: 1rem 0.5rem;
+        background-color: #4c6183;
+        text-decoration: none;
+    }
+    
+    .menulinks a i {
+        padding: 0 0.5rem;
+    }
+    
+    .menulinks a:hover {
+        background-color: #3e4d64;
+    }
+    /* Navmenyn i header på desktop*/
+    
+    .desktopNav {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+    /* länkar i header på desktop*/
+    
+    .navlink:link {
+        font-size: 1.4rem;
+        font-family: 'Lato', sans-serif;
+        text-align: center;
+        color: #fff;
+        padding: 1.8rem 0.4rem;
+        margin: 0;
+        width: 13rem;
+        margin-right: 0.1%;
+        border-right: 1px solid #fff;
+        text-decoration: none;
+    }
+    
+    .navlink:last-child {
+        border-right: none;
+    }
+    
+    .navlink:visited {
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .navlink:hover {
+        color: #fff;
+        opacity: 0.7;
+        border-right: 1px solid #fff;
+    }
+    
+    .navlink:hover:last-child {
+        border-right: none;
+    }
+    
+    .navlink:active {
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .navlink i {
+        padding: 0 0 0 0.5rem;
+    }
+    /* Artikel med bild på startsidan */
+    
+    .textbild {
+        margin: 0.5rem 0 0;
+        width: 100%;
+        height: auto;
+        max-width: 210px;
+    }
+    
+    .bildochtext {
+        text-align: center;
+    }
+    
+    .bildtext {
+        text-align: center;
+        font-weight: 300;
+    }
+    /* boka-formuläret: välj vanlig resa eller återkommande*/
+    
+    #chooseform {
+        margin: 8rem auto 0 auto !important;
+    }
+    
+    #chooseform legend {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    
+    .triptype {
+        margin-top: 4rem;
+        text-align: center;
+    }
+    /* boka-formuläret för resor: behållare*/
+    
+    #bookform,
+    #recurringform,
+    #chooseform,
+    #loginform {
+        margin: 0 auto;
+        padding: 1rem 0;
+        font-size: 1.4rem;
+        color: #fff;
+        background-color: #202e45;
+        box-sizing: border-box;
+    }
+    
+    #loginform h2 {
+        font-size: 1.8rem;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+    }
+    
+    #loginform input[type=text] {
+        background-color: #fff;
+        color: #202e45;
+        display: inline-block;
+        width: 90%;
+        margin: 0.5rem auto 1rem;
+        padding: 1rem 0.5rem 1rem 0.5rem;
+        border-radius: 5px;
+    }
+    
+    #password {
+        width: 40%;
+    }
+    
+    #bookform fieldset legend,
+    #recurringform fieldset legend,
+    #chooseform fieldset legend {
+        margin-top: 1rem;
+    }
+    
+    #bookform fieldset,
+    #recurringform fieldset,
+    #chooseform fieldset,
+    #loginform fieldset {
+        border: none;
+    }
+    
+    #chooseform fieldset legend {
+        margin: 0 auto;
+    }
+    
+    #bookform input[type=text],
+    #recurringform input[type=text] {
+        background-color: #fff;
+        color: #202e45;
+        display: inline-block;
+        width: 90%;
+        margin: 0.5rem auto;
+        padding: 1rem 0.5rem 1rem 4.5rem;
+        border-radius: 5px;
+    }
+    
+    #bookform label,
+    #recurringform label {
+        display: inline-block;
+        margin: 0;
+        padding: 0.7rem 0 0.7rem 0.5rem;
+        border-radius: 5px;
+    }
+    /* Behållare för textfält */
+    
+    .destinationDiv,
+    .departureDiv,
+    #dateDiv,
+    #dateDivReturn,
+    #morningTime,
+    #timeDivReturnRecurring,
+    #dateDivRecurring {
+        position: relative;
+        margin: 1rem 0;
+    }
+    /* Etiketter för inputfält som inte är text */
+    
+    .noworlater label,
+    .choosereturn label,
+    .requirements label,
+    #tripChoicesDiv label {
+        background-color: #202e45;
+        color: #fff;
+    }
+    /* Etiketter för inputfält som är text med absolut positionering*/
+    
+    .destinationDiv label,
+    .departureDiv label {
+        background-color: #fff;
+        color: #202e45;
+        position: absolute;
+        top: 10px;
+        left: 3px;
+        padding: 0.8rem 0.5rem;
+        border-radius: 5px;
+    }
+    /* Text inputfält */
+    
+    #dateDiv input[type=text],
+    #dateDivReturn input[type=text],
+    #morningTime input[type=text],
+    #timeDivReturnRecurring input[type=text],
+    #dateDivRecurring input[type=text] {
+        display: inline-block;
+        width: 140px;
+        padding: 1rem 0.5rem 1rem 4.8rem;
+    }
+    
+    #dateDiv label:first-child {
+        background-color: #fff;
+        color: #202e45;
+        position: absolute;
+        top: 10px;
+        left: 2px;
+    }
+    
+    #dateDiv #timelabel {
+        background-color: #fff;
+        color: #202e45;
+        position: absolute;
+        top: 10px;
+        left: 148px;
+    }
+    
+    #dateDiv #picktime {
+        padding-left: 4rem;
+    }
+    
+    #dateDivReturn label:first-child {
+        background-color: #fff;
+        color: #202e45;
+        position: absolute;
+        top: 10px;
+        left: 2px;
+    }
+    
+    #dateDivReturn #timereturnlabel {
+        background-color: #fff;
+        color: #202e45;
+        position: absolute;
+        top: 10px;
+        left: 148px;
+    }
+    
+    #dateDivReturn #returntime {
+        padding-left: 4rem;
+    }
+    /* Text som säger att resan är bokad, eller ändringar gjorda på resan */
+    
+    .bookText {
+        text-align: center;
+        font-size: 2rem;
+        background-color: #202e45;
+        color: #fff;
+        width: 60%;
+        margin: 1rem auto;
+    }
+    
+    #morningTime #morningTimeRecurring,
+    #timeDivReturnRecurring #returntimeRecurring {
+        padding-left: 4rem;
+    }
+    
+    #morningTime label {
+        background-color: #fff;
+        color: #202e45;
+        position: absolute;
+        top: 10px;
+        left: 2px;
+    }
+    
+    #timeDivReturnRecurring label {
+        background-color: #fff;
+        color: #202e45;
+        position: absolute;
+        top: 10px;
+        left: 2px;
+    }
+    
+    #dateDivRecurring label {
+        background-color: #fff;
+        color: #202e45;
+        position: absolute;
+        top: 10px;
+        left: 2px;
+    }
+    /* behållare för veckodagar */
+    
+    .weekdays {
+        display: inline-block;
+        width: 8rem;
+        align-items: center;
+    }
+    /* Radioknappar för veckodagar */
+    
+    .weekdays input {
+        float: right;
+        margin-top: 1rem;
+        margin-right: 0.5rem;
+    }
+    /* Kryssrutor */
+    
+    input[type=checkbox] {
+        height: 20px;
+        width: 20px;
+    }
+    /* Radioknappar */
+    
+    input[type=radio] {
+        height: 20px;
+        width: 20px;
+        margin-right: 1rem;
+    }
+    /* Behållare för val av anpassning för resan */
+    
+    .tripChoices {
+        width: 17rem;
+        align-items: center;
+    }
+    
+    .tripChoices input {
+        float: right;
+        margin-top: 1rem;
+        margin-right: 0.5rem;
+    }
+    /* Utfällbara knappar, Kod från Malin Larsson, "Exempel på Wai Aria", https://github.com/MallarMiun/aria_example/tree/main Publicerad 2021-11-24 Hämtad 2022-02-20 */
+    
+    #expander {
+        margin: 0;
+        padding: 3% 0;
+        display: block;
+        list-style: none;
+    }
+    /* Utfällbara knappar */
+    
+    #btn1,
+    #btn2,
+    #btn3 {
+        margin: 1rem auto 0;
+        position: relative;
+        max-width: 700px;
+        width: 100%;
+        padding: 2% 0 2% 2%;
+        background-color: #202e45;
+        color: #fff;
+        border: none;
+        font-size: 1.4rem;
+        text-align: left;
+        border: 1px solid #fff;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    /* Pilikonen på knappen */
+    
+    .arrow {
+        position: absolute;
+        font-size: 1.6rem;
+        right: 3%;
+    }
+    /* Text som kommer ut när man trycker på knapparna */
+    
+    .textExpand {
+        background-color: #120e46;
+        color: #fff;
+        font-size: 1.4rem;
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: left;
+        font-size: 1.4rem;
+        line-height: 1.4em;
+        display: none;
+    }
+    
+    .textExpand i {
+        padding-right: 1rem;
+        padding-left: 0.5rem;
+    }
+    
+    .textExpand p {
+        padding: 1.3rem 0.5rem 0 0;
+    }
+    
+    .textExpand:hover {
+        opacity: 1;
+    }
+    /* Knappar på sidan, för att boka, ändra och avboka resa */
+    
+    #booktrip,
+    #booktripRecurring,
+    .booklink,
+    #changetrip,
+    #changetrip1,
+    #changetrip2,
+    #changetrip3,
+    .removeButton {
+        display: block;
+        background-color: #119c11;
+        color: #fff;
+        font-size: 1.4rem;
+        font-family: 'Lato', sans-serif;
+        font-weight: 700;
+        text-shadow: 2px 2px 5px #000;
+        border: 2px solid #fff;
+        width: 80%;
+        padding: 1rem 0;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 30px;
+        text-decoration: none;
+        cursor: pointer;
+        margin: 1rem auto 2rem auto;
+        box-shadow: 5px 2px 4px rgb(29, 29, 29);
+    }
+    /* Länkar måste få ha 0 i line-height, annars får de det automatiskt (jag ville de skulle se ut som knapparna) */
+    
+    .booklink,
+    #changetrip1,
+    #changetrip2,
+    #changetrip3 {
+        line-height: 0;
+    }
+    /* Ikoner på knapparna */
+    
+    #booktrip i,
+    #booktripRecurring i,
+    #changetrip i,
+    .removeButton i,
+    .changeButton i {
+        margin-left: 1rem;
+    }
+    
+    #booktrip:visited {
+        color: #fff;
+    }
+    
+    #booktrip:hover,
+    #booktripRecurring:hover {
+        opacity: 0.7;
+    }
+    
+    #booktrip:active {
+        color: #fff;
+    }
+    /* Knappfärg för att ändra resan */
+    
+    #changetrip1,
+    #changetrip2,
+    #changetrip3 {
+        background-color: rgb(156, 89, 0);
+        color: #fff;
+    }
+    /* Knappfärg för att avboka resan */
+    
+    #canceltrip1,
+    #canceltrip2,
+    #canceltrip3 {
+        background-color: rgb(124, 11, 11);
+        color: #fff;
+    }
+    /* Länk för att "logga in" på sidan */
+    
+    #loginlink:link {
+        margin-top: 2rem;
+        color: #fff;
+        padding: 1rem 2rem;
+        border: 1px solid #fff;
+        display: block;
+        background-color: #120e46;
+        font-size: 1.6rem;
+        font-family: 'Lato', sans-serif;
+        font-weight: 700;
+        text-shadow: 2px 2px 5px #000;
+        border: 2px solid #fff;
+        width: 80%;
+        padding: 1rem 0;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 30px;
+        text-decoration: none;
+        cursor: pointer;
+        margin: 1rem auto 2rem auto;
+        box-shadow: 5px 2px 4px rgb(29, 29, 29);
+    }
+    
+    #loginlink i {
+        padding-left: 1rem;
+    }
+    
+    #loginlink:visited {
+        color: #fff;
+    }
+    
+    #loginlink:hover {
+        color: #fff;
+        opacity: 0.7;
+    }
+    
+    #loginlink:active {
+        color: #fff;
+    }
+    /* Div för bakgrundsbild på framsidan */
+    
+    .backgroundimageDiv {
+        position: relative
+    }
+    /* Bakgrundsbild på framsidan */
+    
+    .backgroundimage {
+        margin-top: -1rem;
+        width: 100%;
+        height: auto;
+        max-height: 480px;
+    }
+    /* Länkar för att komma till boka-sidan på startsidan*/
+    
+    .booklink {
+        position: absolute;
+        top: 30px;
+        left: 5%;
+        right: 5%;
+        z-index: 2;
+        text-decoration: none;
+        line-height: 0;
+        padding: 2rem;
+    }
+    
+    .booklink i {
+        padding: 0 0 0 1rem;
+    }
+    
+    .booklink:visited {
+        color: #fff;
+    }
+    
+    .booklink:active {
+        color: #fff;
+    }
+    /* Behållare av en resa i listningen av resor på profilsidan */
+    
+    .tripContainer {
+        width: 100%;
+        margin: 0 auto 2rem auto;
+        border-bottom: 2px solid #fff;
+    }
+    
+    .tripContainer:hover {
+        opacity: 1;
+    }
+    /* Tabell för vardera resa i listningen */
+    
+    table {
+        margin: 0 auto;
+        font-size: 1.4rem;
+    }
+    /* Tabell för prislista */
+    
+    .pricesContainer {
+        width: 96%;
+        margin: 2%;
+    }
+    
+    #prices {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1rem;
+        padding: 0 0.5rem;
+        font-size: 1.2rem;
+    }
+    
+    #prices table tr td:first-child {
+        padding-right: 1rem;
+    }
+    
+    #prices tr td {
+        padding: 0.5rem;
+        text-align: left;
+    }
+    
+    #prices thead tr th {
+        padding: 0.5rem;
+        text-align: center;
+    }
+    
+    #prices,
+    #prices tr td {
+        border: 1px solid #fff;
+        border-collapse: collapse;
+    }
+    /* Aside-element samt visa main-element */
+    
+    aside,
+    .mainContent {
+        display: flex;
+        flex-direction: column;
+    }
+    /* Behållare för footertext */
+    
+    .footerWrapper {
+        width: 100vw;
+        margin: 0 auto;
+    }
+    
+    footer {
+        background-color: #40257e;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 2rem 0 3rem;
+    }
+    /* Klass för text som är understuken. Jag vet att man inte ska ha det om det inte är en länk, men jag ville bara att det skulle se ut som en länk */
+    
+    .underLine {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    /* Lista med länkar och annat i footer-elementet */
+    
+    footer ul {
+        list-style: none;
+        text-align: center;
+    }
+    
+    footer ul li a,
+    .mainContent a,
+    aside a {
+        color: #fff;
+    }
+    
+    footer ul li a:visited,
+    .mainContent a:visited,
+    aside a:visited {
+        color: #fff;
+    }
+    
+    footer ul li a:hover,
+    .mainContent a:hover,
+    aside a:hover {
+        opacity: 0.7;
+    }
+    
+    footer ul li a:active,
+    .mainContent a:active,
+    aside a:active {
+        color: blue;
+    }
+    /* Navigeringsmeny för dator visas inte på mindre enheter */
+    
+    @media screen and (max-width: 686px) {
+        .desktopNav {
+            display: none;
+        }
+    }
+    /* Media query för mellanstora skärmar */
+    
+    @media only screen and (min-width: 687px) and (max-width: 1023px) {
+        body {
+            font-size: 1.6rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+        h2 {
+            font-size: 2.4rem;
+        }
+        h3 {
+            font-size: 2rem;
+            text-align: center;
+        }
+        p {
+            padding: 0.5rem 0;
+        }
+        article {
+            padding: 0.5rem 0;
+            margin-bottom: 1.5rem;
+        }
+        aside,
+        .mainContent {
+            width: 80vw;
+            margin: 0 auto;
+        }
+        .desktopNav {
+            display: none;
+        }
+        .menulinks {
+            padding-top: 5rem;
+        }
+        .menulinks a {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            padding: 1.5rem 0.5rem;
+        }
+        .menulinks a i {
+            padding: 0 1rem;
+        }
+        .booklink {
+            top: 110px;
+            width: 40%;
+        }
+        .viewtripslink {
+            width: 40%;
+        }
+        #bookform,
+        #recurringform,
+        #chooseform,
+        #loginform {
+            width: 70vw;
+            margin: 4rem auto 0 8rem;
+        }
+        #profileMain {
+            width: 70vw;
+            margin: 6rem auto 0 8rem;
+        }
+        #dateDiv input[type=text],
+        #dateDivRecurring input[type=text] {
+            display: inline-block;
+            width: 165px;
+            padding: 1rem 0.5rem 1rem 5.8rem;
+        }
+        #dateDivReturn input[type=text] {
+            display: inline-block;
+            width: 165px;
+            padding: 1rem 0.5rem 1rem 5.8rem;
+        }
+        .destinationDiv label,
+        .departureDiv label,
+        #dateDivRecurring label,
+        .destinationDiv label,
+        .departureDiv label {
+            position: absolute;
+            top: 12px;
+            left: 2px;
+        }
+        #dateDiv label:first-child,
+        #morningTime label,
+        #timeDivReturnRecurring label {
+            position: absolute;
+            top: 12px;
+            left: 2px;
+        }
+        #dateDiv #timelabel {
+            position: absolute;
+            top: 12px;
+            left: 175px;
+        }
+        #dateDivReturn label:first-child {
+            position: absolute;
+            top: 12px;
+            left: 2px;
+        }
+        #dateDivReturn #timereturnlabel {
+            position: absolute;
+            top: 12px;
+            left: 175px;
+        }
+        #dateDivRecurring label {
+            position: absolute;
+            top: 12px;
+            left: 2px;
+        }
+        #booktripRecurring,
+        #booktrip,
+        #changetrip1,
+        #changetrip2,
+        #changetrip3,
+        .removeButton,
+        #loginlink,
+        #changetrip {
+            width: 60%
+        }
+        footer h2 {
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        .footerWrapper {
+            display: flex;
+            flex-direction: row;
+            width: 90%;
+            margin: 0 auto;
+        }
+        footer ul {
+            text-align: left;
+            margin-top: 1rem;
+            margin-left: 1rem;
+        }
+        .leftColumnFooter,
+        .rightColumnFooter {
+            flex-basis: 50%;
+        }
+        #prices {
+            width: 100%;
+            font-size: 1.6rem;
+        }
+    }
+    /* Media query för större skärmar */
+    
+    @media screen and (min-width: 1024px) {
+        article {
+            padding: 0.5rem 0.5rem;
+        }
+        h1 {
+            font-size: 2.6rem;
+        }
+        h2 {
+            font-size: 2.4rem;
+            margin: 1rem 0 0.8rem;
+            width: 100%;
+            text-align: center;
+        }
+        h3 {
+            font-size: 2.2rem;
+            padding: 1rem 0 0.9rem;
+        }
+        body {
+            font-size: 1.6rem;
+        }
+        p {
+            padding: 0.6rem 0;
+        }
+        aside {
+            width: 70%;
+            margin: 0 auto;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .mainContent h2 {
+            margin-bottom: 2rem;
+        }
+        .mainContent {
+            width: 40%;
+            margin: 0 auto;
+            padding-bottom: 3rem;
+        }
+        .mainContent article h3 {
+            text-align: left;
+        }
+        aside article {
+            flex-basis: 50%;
+        }
+        .textExpand {
+            margin: 0;
+            width: 100%;
+        }
+        .mobilNav {
+            display: none;
+        }
+        header {
+            height: 91px;
+        }
+        .header_flexcontainer {
+            padding: 0;
+        }
+        .logga {
+            display: block;
+            width: 170px;
+            height: 80px;
+            top: 15px;
+            left: 3%;
+        }
+        .header_flexcontainer .minaresorMob {
+            display: none;
+        }
+        .booklink {
+            top: 60px;
+            font-weight: 700;
+            width: 20%;
+        }
+        .booklink:hover {
+            background-color: #4bcf4b;
+        }
+        .viewtripslink {
+            font-weight: 700;
+            top: 35%;
+            padding: 2.5rem 0;
+            width: 25%;
+        }
+        /* Formulären är inte lika breda på desktop */
+        #bookform,
+        #recurringform,
+        #profileMain,
+        #loginform {
+            width: 40vw;
+            margin: 2rem auto 0;
+        }
+        #chooseform,
+        #loginform {
+            margin: 12rem auto 2rem auto !important;
+        }
+        #profileMain {
+            width: 40vw;
+            margin: 3rem auto 0;
+            padding-top: 3.5rem;
+        }
+        #dateDiv input[type=text] {
+            display: inline-block;
+            width: 165px;
+            padding: 1rem 0.5rem 1rem 5.8rem;
+        }
+        #dateDivReturn input[type=text],
+        #dateDivRecurring input[type=text] {
+            display: inline-block;
+            width: 165px;
+            padding: 1rem 0.5rem 1rem 5.8rem;
+        }
+        .destinationDiv label,
+        .departureDiv label,
+        #dateDivRecurring label,
+        .destinationDiv label,
+        .departureDiv label {
+            position: absolute;
+            top: 11px;
+            left: 2px;
+        }
+        #dateDiv label:first-child {
+            position: absolute;
+            top: 12px;
+            left: 2px;
+        }
+        #dateDiv #timelabel {
+            position: absolute;
+            top: 12px;
+            left: 175px;
+        }
+        #dateDivReturn label:first-child,
+        #morningTime label,
+        #timeDivReturnRecurring label {
+            position: absolute;
+            top: 11px;
+            left: 2px;
+        }
+        #dateDivReturn #timereturnlabel {
+            position: absolute;
+            top: 12px;
+            left: 175px;
+        }
+        /* Knapparna är mindre */
+        #booktripRecurring,
+        #booktrip,
+        #changetrip1,
+        #canceltrip1,
+        #changetrip2,
+        #canceltrip2,
+        #changetrip3,
+        #canceltrip3,
+        #loginlink,
+        #changetrip {
+            width: 50%;
+        }
+        /* Id för att visa den sidan man är på */
+        #activeDesktop {
+            background-color: #202e45;
+            text-decoration: underline;
+        }
+        footer {
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
+        }
+        .footerWrapper {
+            display: flex;
+            flex-direction: row;
+            width: 70%;
+            margin: 0 auto;
+        }
+        footer h2 {
+            text-align: left;
+            font-size: 1.8rem;
+        }
+        footer ul {
+            text-align: left;
+            margin-top: 1rem;
+            padding: 0;
+        }
+        .leftColumnFooter {
+            flex-basis: 50%;
+            padding-left: 1rem;
+        }
+        .rightColumnFooter {
+            flex-basis: 50%;
+            padding-left: 2rem;
+        }
+        #prices {
+            width: 100%;
+            font-size: 1.6rem;
+        }
+    }
+    /* Loggan är lite mer centrerad på riktigt stora skärmar */
+    
+    @media screen and (min-width: 1850px) {
+        .logga {
+            left: 15%;
+        }
+    }

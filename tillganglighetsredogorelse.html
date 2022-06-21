@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tillgänglighetsredogörelse | Uppsala färdtjänst</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <!--Import av ikoner från Font Awesome -->
+    <script src="https://kit.fontawesome.com/bd04e42f52.js" crossorigin="anonymous"></script>
+
+    <!--Import av valda typsnitt från Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--Webbplatsens header-->
+    <header class="header_flexcontainer">
+        <h1 class="pagetitleHidden">Tillgänglighetsredogörelse</h1>
+        <a class="hidden" href="#maincontent">gå till huvudinnehåll</a>
+        <a href="index.html" class="logga">
+            <img src="Images/logga.svg" alt="Uppsala färdtjänst logga">
+        </a>
+        <!--<a href="minaresor.html" class="minaresorMob">Mina resor<i class="fa-solid fa-car"></i></a>-->
+        <!--Menylänkar för desktop-->
+        <nav class="desktopNav" aria-label="Main">
+            <a href="minprofil.html" class="navlink" title="Se din profil">Min profil: Sonia<i class="fa-solid fa-user"></i></a>
+            <a href="boka.html" class="navlink" title="Boka en ny resa">Boka resa<i class="fa-solid fa-car"></i></a>
+            <a href="omfardtjanst.html" class="navlink" title="Information Uppsala Färdtjänst">Om färdtjänst<i class="fa-solid fa-circle-info"></i></a>
+            <a href="login.html" class="navlink" title="Klicka här för att logga ut">Logga ut<i class="fa-solid fa-right-from-bracket"></i></a>
+        </nav>
+        <!--Ikon för att öppna och stänga hamburgarmeny-->
+        <div class="mobilNav">
+            <label for="meny" class="menulabel">Meny</label>
+            <button class="hamburger" id="meny">
+            <span class="bar"></span>
+        </button>
+        </div>
+        <!--Länkar i hamburgarmeny-->
+        <nav class="menulinks" aria-label="Main">
+            <label for="meny" class="closelabel">Stäng</label>
+            <a href="minprofil.html">Min profil: Sonia<i class="fa-solid fa-user"></i></a>
+            <a href="boka.html">Boka resa<i class="fa-solid fa-car"></i></a>
+            <a href="omfardtjanst.html">Om färdtjänst<i class="fa-solid fa-circle-info"></i></a>
+            <a href="login.html">Logga ut<i class="fa-solid fa-right-from-bracket"></i></a>
+        </nav>
+    </header>
+    <main class="mainContent" id="maincontent" tabindex="-1">
+        <article>
+            <h2>Tillgänglighetsredogörelse</h2>
+            <p onclick="location.href='mailto:kontakt@uppsalafardtjanst.se';" style="cursor: pointer;"><strong>Uppsala Färdtjänst faller under lagen för digital offentlig service. Webbplatsen följer delvis lagen, och vi arbetar med att följa den till fullo. Om du har upptäckt brister vad gäller tillgängligheten, kan du göra det till oss på (länk till e-post): <a href="mailto:kontakt@uppsalafardtjanst.se">kontakt@uppsalafardtjanst.se</a></strong></p>
+        </article>
+        <!--Information om brister i tillgängligheten-->
+        <article>
+            <h3>Kända tillgänglighetsbrister</h3>
+            <p>Den här webbplatsen är delvis förenlig med lagen om tillgänglighet till digital offentlig service, på grund av de brister som beskrivs nedan.</p>
+            <ul>
+                <li>Vissa tabeller uppfyller inte alla krav på tillgänglighet.</li>
+                <li>Vissa knappar saknar aria-label.</li>
+                <li>Det ges ingen varning om ett obligatoriskt fält har lämnats tomt.</li>
+                <li>Attributet autocomplete används inte på inmatningsfält.</li>
+                <li>Det finns länkar i brödtext, som kan uppfattas som otydliga.</li>
+                <li>Vid textförstoring förflyttas vissa element.</li>
+                <li>Etiketter till radioknappar och kryssrutor är till vänster om knappen.</li>
+            </ul>
+            <p>Dessa brister beräknas vara åtgärdade 8 juli 2022.</p>
+        </article>
+        <!--Information om testning av Uppsala färdtjänst-->
+        <article>
+            <h3>Testning av Uppsala Färdtjänst</h3>
+            <p>Testpersoner har testat webbplatsen. Andra testverktyg har också använts för att säkerställa att webbriktlinjerna följs.</p>
+            <p>Webbplatsen testades senast 9 mars 2022.</p>
+            <p>Senaste bedömningen av webbplatsen gjordes 1 november 2022.</p>
+        </article>
+    </main>
+    <!--Webbplatsens footer-->
+    <footer>
+        <div class="footerWrapper">
+            <div class="leftColumnFooter">
+                <h2>Kontakt</h2>
+                <ul class="contactnav">
+                    <li>Telefon: <span class="underLine">018-550000</span></li>
+                    <li>E-post: <a href="mailto:bokning@uppsalafardtjanst.se">bokning@uppsalafardtjanst.se</a></li>
+                    <li>Besöks&shy;adress: Storgatan 12B</li>
+                    <li>Öppet vardagar kl. 8-16</li>
+                </ul>
+            </div>
+            <div class="rightColumnFooter">
+                <h2>Om webbplatsen</h2>
+                <ul class="aboutnav">
+                    <li><a href="omfardtjanst.html">Om Uppsala Färdtjänst</a></li>
+                    <li><a href="tillganglighetsredogorelse.html">Tillgänglighetsredogörelse</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
